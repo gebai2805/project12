@@ -1,4 +1,4 @@
-pipeline {
+pipeline {}
     agent any
     tools{
         maven 'maven'
@@ -26,7 +26,7 @@ pipeline {
         {
           steps {
             script {
-                  sh "docker build -t ${IMAGE_NAME}:latest ."
+                  sh "docker build -t ${nginx}:latest ."
             }
           }  
         }
@@ -34,14 +34,14 @@ pipeline {
         {
           steps {
                 withDockerRegistry([credentialsId: "${DOCKER_CREDENTIALS}", url: ""]) {
-                    sh "docker push ${IMAGE_NAME}:latest"
+                    sh "docker push ${nginx}:latest"
           }  
         }
         stage ('Remove docker image from local host')
         {
           steps {
             script {
-                    sh "docker rmi ${IMAGE_NAME}:latest"
+                    sh "docker rmi ${nginx}:latest"
           }  
         }
         stage ('Run docker container')
