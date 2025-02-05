@@ -1,0 +1,369 @@
+*{
+    margin: 0;
+}
+#part1{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(2, 12, 49);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    
+}
+#c{
+    height: 80px;width: 100%;
+    background-color: whitesmoke;
+    color:black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+  
+}
+#b{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 25px;
+    text-transform: uppercase;
+}
+#part2{
+    height: 500px;
+    width: 100%;
+    background-image: url("https://cdn.pixabay.com/photo/2021/10/25/19/47/sunset-6741863_640.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 500px;
+    background-position: fixed;   
+}
+#d{
+    height: 250px;
+    width: 30%;
+    position: relative;
+    top:60px;
+    left:220px;
+    color: rgb(24, 11, 11);
+}
+.e{
+    height: 30px;width: 30%;
+    background-color: rgb(8, 69, 90);
+    color: white;
+}
+#f{
+    background-color: white;
+    position: relative;
+    /* left: 100px; */
+    top:30px;
+    width: 100%;
+}
+nav{
+  padding-left:250px ;
+}
+ .G{
+    height: 230px;
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    left:280px;
+    top:40px;
+ }
+ .W{
+    height: 130px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top:5px;
+    opacity: 70%;    
+ }
+ .Z{
+    height: 130px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+   left: 150PX;
+    top:5px;
+    opacity: 70%;   
+ }
+ .Y{
+    position: relative;
+    left: 10PX;
+ }
+ #P,#T,#Q,#R{
+    position: relative;
+    top: 0;
+    height: 90PX;
+    left: -10px;  
+ }
+ p{
+    position: relative;
+    top: 5px;
+ }
+ span{
+    color: rgb(29, 187, 230);
+ }
+ #q{
+    height: 230px;
+    width: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    left:280px;
+    top:50px;
+ }
+ #x{
+    height: 130px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top:65px;
+    left:30px;   
+ }
+ #k{
+    height: 130px;
+    width:90%;
+    position: relative;
+    top: 40px;
+    background-size: auto;
+ }
+ #img1{
+    position: absolute;
+    z-index: 1;
+    left:25px;
+    opacity: 90%;
+ }
+ #img2{
+    position: absolute;
+    opacity: 60%;
+    background-color: rgb(25, 25, 43);
+ }
+ #img9 {
+    height: 270px;
+    width: 100%;
+    background-image: url("https://cdn.pixabay.com/photo/2018/03/03/13/15/sunset-3195637_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 270px;
+    position: relative;
+    top: 200px;
+    opacity: 90%;
+ }
+ #box1{
+        height: 190px;
+    width: 28%;
+    position: relative;
+    top:60px;
+    left:280px;
+    color: white;
+    font-size: 13px;
+    word-break: keep-all;
+}
+ #b1{height: 30px;
+    width: 280px;
+    background-color: whitesmoke;
+    position: relative;
+    top: 5px;
+ }
+ #b2{height: 30px;
+    width: 180px;
+    background-color: rgb(4, 4, 68);
+    color: white;
+    position: relative;
+    left: 0;
+    top: 5px;
+ }
+ #butt{display: flex;
+ }
+#box1 p{position: relative;
+    top: 8px;
+ }
+ #lasthead{
+    height: 700px;
+    width: 1000px;
+    /* background-size: 100% 700px; */
+    /* background-color: bisque; */
+    position: relative;
+    top: 250px; 
+    left: 280px;
+}
+   #last{
+
+    display: flex;
+    justify-content: space-between;
+    
+   }     
+   #l1{
+    border: 0.3px solid black;
+    width: 290px;
+    padding: 20px;
+opacity: 90%;
+   
+    
+   } 
+   #l2{
+    border: 0.3px solid rgb(17, 15, 15);
+   
+    width: 290px;
+    position: relative;
+    right: 290px;
+    padding: 20px;
+    opacity: 90%;
+   } 
+  
+
+   #m1 , #n1{
+    height: 100px;
+    width: 100px;
+    background-image: url("https://cdn.pixabay.com/photo/2021/03/14/10/13/girl-6093779_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    border-radius: 50%;
+    /* position: relative;
+    top: 200px;
+    opacity: 90%;
+    */
+   }
+   
+   #last1  {
+    background-color: teal;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    left: 750px;
+    bottom: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+   }
+   #last2{
+   position: relative;
+ background-color: teal;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    left: 750px;
+    bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  
+   
+   }
+   #f1 , #f2{
+    display: flex;
+    position: relative;
+    left: 5px;
+    bottom: 3px;
+    
+   }
+   #text{
+    display: flex;
+    position: relative;
+    left: 1px;
+    bottom: 4px;
+   }
+   #m1, #n1{
+    position: relative;
+    bottom: 20px;
+   
+
+   }
+   #m2,#n2{ position: relative;
+  left: 9px;
+   }
+   #f1{position: relative;
+    bottom: 8px;
+    left: -3px;
+  
+
+   }
+
+   
+   #f2{
+    padding-left:205px;
+   }
+   #z
+   {
+    height: 300px;
+    width: 60%;
+    margin-left: 300px;
+    position: relative;
+   }
+   #z1
+   {
+    position: absolute;
+    line-height: 30px;
+   }
+   input
+   {
+    width: 300px;
+    height: 50px;
+    font-size:large;
+    border-color: none;
+    border-width: 2px;
+    border-style: inset;
+   }
+   #z11
+   {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(6, 6, 90);
+    color: whitesmoke;
+   }
+   #z2
+   {
+    height: 200px;
+    width: 200px;
+    position:absolute;
+    right: 300px;
+    
+   }
+   #x
+   {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    background-color: rgb(1, 1, 19);
+    color: white;
+   }
+   #x1
+   {
+    width: 20%;
+    height: 200px;
+   }
+   #x2
+   {
+    width: 20%;
+    height: 200px;
+   }
+   #x3
+   {
+    width: 20%;
+    height: 200px;
+   }
+   #x4
+   {
+    width: 20%;
+    height: 200px;
+   }
+   #bx4
+   {
+    height: 50px;
+    width: 100px;
+    background-color: rgb(78, 146, 205);
+    color: white;
+   }
