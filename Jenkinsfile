@@ -1,76 +1,69 @@
-pipeline {}
+pipeline {
     agent any
+
     tools{
         maven 'maven'
     }
-    environment {
-        GIT_REPO = 'https://github.com/gebai2805/DevOps_Project.git' 
-        BRANCH = 'main'  
-        IMAGE_NAME = 'your-dockerhub-username/your-image-name'  // Change this
-        DOCKER_CREDENTIALS = 'docker-hub-credentials'  // Jenkins credential ID for Docker Hub
-        CONTAINER_NAME = 'java-web-app'  // Change if needed
-    }
-    stages {
-        stage('Checkout Code') {
-            steps {
-                git branch: "${BRANCH}", url: "${GIT_REPO}"
+
+    stages{
+        stage('Check and remove container'){
+            steps{
+                script{
+                    def containerExists = sh(script: "docker ps -q -f name=geetha", returnStdout: true).trim()
+                    if (containerExists) {
+                    sh "docker stop geetha"
+                    sh "docker rm geetha"
+                    }
+                }
             }
         }
-        stage ('Build')
-        {
-          steps {
+        stage('Build package'){
+            steps{
                 sh 'mvn clean package'
-          }  
-        }
-        stage ('Build docker image')
-        {
-          steps {
-            script {
-                  sh "docker build -t ${nginx}:latest ."
             }
-          }  
         }
-        stage ('Push to dockerhub')
-        {
-          steps {
-                withDockerRegistry([credentialsId: "${DOCKER_CREDENTIALS}", url: ""]) {
-                    sh "docker push ${nginx}:latest"
-          }  
-        }
-        stage ('Remove docker image from local host')
-        {
-          steps {
-            script {
-                    sh "docker rmi ${nginx}:latest"
-          }  
-        }
-        stage ('Run docker container')
-        {
-          steps {
-            script {
-                    // Stop and remove existing container if it exists
-                    sh """
-                    docker stop ${CONTAINER_NAME} || true
-                    docker rm ${CONTAINER_NAME} || true
-                    """
-
-                    // Run a new container from the pushed image
-                    sh "docker run -d --name ${CONTAINER_NAME} -p 8080:8080 ${IMAGE_NAME}:latest"
+        stage('Create image'){
+            steps{
+                sh 'sudo docker build -t app /var/lib/jenkins/workspace/Zoo/'
             }
-          }  
         }
+        stage('Assign tag'){
+            steps{
+                sh 'docker tag app gebai2805/app'
+            }
         }
-        Post
-        {
-          always {
-            echo "Deployment Successful"
-          }  
-          success{
-            echo "Success"
-          }
-          failure {
-
-          }
+        stage('Push to dockerhub'){
+            steps{
+                sh 'echo "Edml@080697" | docker login -u "gebai2805" --password-stdin'
+                sh 'docker push gebai2805/app'
+            }
+        }
+        stage('Remove images'){
+            steps{
+                sh 'docker rmi -f $(docker images -q)'
+            }
+        }
+        stage('Pull image from DockerHub'){
+            steps{
+                sh 'docker pull gebai2805/app'
+            }
+        }
+        stage('Run a container'){
+            steps{
+                sh 'docker run -it -d --name geetha -p 8081:8080 gebai2805/app'
+            }
         }
     }
+    post {
+        success {
+            echo 'Deployment successful'
+        }
+        failure {
+            sh 'docker rm -f geetha'
+        }
+        always{
+            echo 'Deployed'
+        }
+    }
+
 }
